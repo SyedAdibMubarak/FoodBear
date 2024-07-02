@@ -7,10 +7,12 @@ public class Driver : MonoBehaviour
     [SerializeField] float steerSpeed = 300f;
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float BoostSpeed = 20f;
+
+    MoneyTracker moneyTracker;
     // Start is called before the first frame update
     void Start()
     {
-        
+        moneyTracker =FindObjectOfType<MoneyTracker>();
     }
 
     // Update is called once per frame
@@ -26,6 +28,13 @@ public class Driver : MonoBehaviour
         if(other.tag == "Boost"){
             Debug.Log("You Are Boosting");
             moveSpeed = BoostSpeed;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.tag == "Bump")
+        {
+            moneyTracker.MoneyChange(-20);
         }
     }
 }
