@@ -8,6 +8,7 @@ TagManager:
   - Customer
   - Boost
   - Bump
+  - Driveway
   layers:
   - Default
   - TransparentFX
@@ -47,4 +48,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 4150440683
+    locked: 0
+  - name: Minimap
+    uniqueID: 2332090875
     locked: 0
